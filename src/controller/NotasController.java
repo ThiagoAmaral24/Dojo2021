@@ -16,7 +16,7 @@ public class NotasController {
 
     private Double validacaoNotas(){
         int qtd_notas_100 = valor / 100;
-        valor -= qtd_notas_100;
+        valor -= (qtd_notas_100 * 100);
 
         return null;
     }
