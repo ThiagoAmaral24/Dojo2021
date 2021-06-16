@@ -1,8 +1,10 @@
 package controller;
+import functions.NotaFunction;
 
 public class NotasController {
 
-    private int qtd_notas_100;
+
+    private int qtd_nota_100;
     private int qtd_nota_50;
     private int qtd_nota_20;
     private int qtd_nota_10;
@@ -17,8 +19,8 @@ public class NotasController {
 
     public String validacaoNotas(Double valor){
         Double total = valor;
-        int qtd_notas_100 = (int) (valor / 100);
-        valor -= (qtd_notas_100 * 100);
+        int qtd_nota_100 = (int) (valor / 100);
+        valor -= (qtd_nota_100 * 100);
 
         int qtd_nota_50 = (int) (valor / 50);
         valor -= (qtd_nota_50 * 50);
@@ -50,18 +52,18 @@ public class NotasController {
         int qtd_moeda_001 = (int) (valor / 0.01);
         valor -= (qtd_moeda_001 * 0.01);
 
-        return "Notas 100: " + qtd_notas_100 + "\n" +
-                "Notas 50: " + qtd_nota_50 + "\n" +
-                "Notas 20: " + qtd_nota_20 + "\n" +
-                "Notas 10: " + qtd_nota_10 + "\n" +
-                "Notas 5: " + qtd_nota_5 + "\n" +
-                "Moedas 1: " + qtd_moeda_1 + "\n" +
-                "Moedas 0,50: " + qtd_moeda_050 + "\n" +
-                "Moedas 0,25: " + qtd_moeda_025 + "\n" +
-                "Moedas 0,10: " + qtd_moeda_010 + "\n" +
-                "Moedas 0,05: " + qtd_moeda_005 + "\n" +
-                "Moedas 0,01: " + qtd_moeda_001 + "\n" +
-                "Total: R$" + total;
+        return  qtd_nota_100 + " notas(s)  de R$ 100.00\n" +
+                qtd_nota_50 + " notas(s)  de R$ 50.00\n" +
+                qtd_nota_20 + " notas(s)  de R$ 20.00\n" +
+                qtd_nota_10 + " notas(s)  de R$ 10.00\n" +
+                qtd_nota_5 + " notas(s)  de R$ 5.00\n" +
+                qtd_moeda_1 + " moedas(s) de R$ 1.00\n" +
+                qtd_moeda_050 + " moedas(s) de R$ 0.50\n" +
+                qtd_moeda_010 + " moedas(s) de R$ 0.10\n" +
+                qtd_moeda_001 + " moedas(s) de R$ 0.01\n" +
+                "Total: R$" + total + "\n"
+                ;
 
     }
+
 }
